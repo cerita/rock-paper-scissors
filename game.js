@@ -15,36 +15,38 @@ let computerDisplay = document.getElementById("computer-turn");
 function playRound(playerSelection) {
 
   computerSelection = computerPlay();
+  console.log(computerSelection);
+  console.log(playerSelection)
 
 
   if(playerSelection === computerSelection) {
     console.log("It's a tie!")
-    document.getElementById("computer-turn").innerHTML = computerSelection;
+    computerDisplay.innerHTML = computerSelection;
   } else if(playerSelection === 'rock'){
     if(computerSelection === 'scissors') {
-      document.getElementById("computer-turn").innerHTML = computerSelection;
+      computerDisplay.innerHTML = computerSelection;
       playerScore++;
     } else {
-      document.getElementById("computer-turn").innerHTML = computerSelection;
+      computerDisplay.innerHTML = computerSelection;
       computerScore++;
     }
   }
   if(playerSelection === 'paper'){
     if(computerSelection === 'rock') {
-      document.getElementById("computer-turn").innerHTML = computerSelection;
+      computerDisplay.innerHTML = computerSelection;
       playerScore++;
     } else {
-      document.getElementById("computer-turn").innerHTML = computerSelection;
+      computerDisplay.innerHTML = computerSelection;
       computerScore++;
     }
   }
   if(playerSelection === 'scissors'){
     if(computerSelection === 'paper') {
-      document.getElementById("computer-turn").innerHTML = computerSelection;
+      computerDisplay.innerHTML = computerSelection;
 
       playerScore++;
     } else {
-      document.getElementById("computer-turn").innerHTML = computerSelection;
+      computerDisplay.innerHTML = computerSelection;
       computerScore++;
     }
   }
@@ -61,5 +63,5 @@ function reset(){
   document.getElementById('playerScore').innerHTML = playerScore;
   document.getElementById('computerScore').innerHTML = computerScore;
 
-  document.getElementById("computer-turn").innerHTML = "";
+  computerDisplay.innerHTML = "";
 }
